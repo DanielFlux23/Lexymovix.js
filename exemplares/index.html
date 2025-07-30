@@ -29,11 +29,26 @@ align-items: center;
   <script type="module">
   import {text} from '/src/core/lexymovix.js';
     
-   text(document.getElementById('paragrafo'), (char, i, total, t) => {
-  const amplitude = 20;
-  const wave = Math.sin(i * 0.4 + t / 200) * amplitude;
-  char.position(i * 3, wave);
-  char.rotate(wave * 0.8);
+   text(document.getElementById('paragrafo'), (char, i, chars, t) => {
+  // Ângulo giratório do caos
+  const angle = t * 0.005 + i * 0.2;
+  
+  // Raio da espiral com pulsação
+  const radius = 100 + Math.sin(t * 0.002 + i) * 50;
+  
+  // Coordenadas em espiral
+  const x = Math.cos(angle) * radius;
+  const y = Math.sin(angle) * radius;
+  
+  // Zoom que pulsa no ritmo do tempo e do índice
+  const scale = 1 + Math.sin(t * 0.01 + i * 0.5) * 0.5;
+  
+  // Rotação frenética
+  const rotation = t * 0.1 + i * 10;
+  
+  char.position(x, y);
+  char.scale(scale);
+  char.rotate(rotation);
 });
   </script>
 </body>

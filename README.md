@@ -3,7 +3,7 @@
 Uma mini-engine de animação de texto em HTML.
 Transforma textos em elementos animáveis caractere por caractere, em tempo real.
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qRb7g-Ryir8" frameborder="0" allowfullscreen></iframe>
 ---
 
 # Como usar
