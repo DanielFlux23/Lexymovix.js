@@ -8,7 +8,7 @@ Transforma textos em elementos animáveis caractere por caractere, em tempo real
 
 # Como usar
 
-```
+```javascript
 import { text } from './lexymovix.js';
 
 text(elemento, (char, index, chars, tempo) => {
@@ -39,7 +39,7 @@ text(elemento, (char, index, chars, tempo) => {
 ---
 
 # Exemplo completo
-```
+```javascript
 text(document.getElementById('titulo'), (char, i, chars, t) => {
   const y = Math.sin(i * 0.5 + t * 0.01) * 20;
   char.position(i * 15, y);

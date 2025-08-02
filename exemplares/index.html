@@ -29,9 +29,9 @@ align-items: center;
   <script type="module">
   import {text} from '/src/core/lexymovix.js';
     
-   text(document.getElementById('paragrafo'), (char, i, chars, t) => {
+   /*text(document.getElementById('paragrafo'), (char, i, chars, t) => {
   // Ângulo giratório do caos
-  const angle = t * 0.005 + i * 0.2;
+  const angle = t * 0.000005 + i * 0.2;
   
   // Raio da espiral com pulsação
   const radius = 100 + Math.sin(t * 0.002 + i) * 50;
@@ -41,7 +41,7 @@ align-items: center;
   const y = Math.sin(angle) * radius;
   
   // Zoom que pulsa no ritmo do tempo e do índice
-  const scale = 1 + Math.sin(t * 0.01 + i * 0.5) * 0.5;
+  const scale = 1 + Math.sin(t * 0.01 + i * 0.5) * 1;
   
   // Rotação frenética
   const rotation = t * 0.1 + i * 10;
@@ -49,6 +49,11 @@ align-items: center;
   char.position(x, y);
   char.scale(scale);
   char.rotate(rotation);
+});*/
+text(document.getElementById('paragrafo'), (char, i, chars, t) => {
+  const y = Math.sin(i * 0.5 + t * 0.01) * 20;
+  char.position(i * 15, y);
+  char.rotate(y * 0.5);
 });
   </script>
 </body>
